@@ -1,6 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import { ColorModeContext } from "./ColorMode";
+import React, { useState } from 'react'
 
 const StyledSwitch = styled.div`
   background-color: #333333;
@@ -38,12 +38,35 @@ const StyledSwitch = styled.div`
 
 export default function DarkModeSwitch() {
     const contexto = React.useContext(ColorModeContext);
+    
+    const [isChecked, setIsChecked] = useState(null)
+
+    React.useEffect(() => {
+      
+      var local = localStorage.getItem('ls_theme')
+     
+     
+      if (local === "light") {
+        setIsChecked(true)
+      }
+      if (local !== "light" && local !== "dark") {
+        setIsChecked(true)
+      }
+      if (local === "dark") {
+        setIsChecked(false)
+      }
+     
+    }, [])
+
+    if (isChecked === null) return null
+    
 
     return (
         <StyledSwitch>
-            <input id="darkmode" type="checkbox" onChange={() => {
+            <input id="darkmode" type="checkbox" checked={isChecked} onChange={() => {
                 console.log("mudou o state");
                 contexto.toggleMode();
+                setIsChecked(!isChecked)
             }} />
             <label
                 htmlFor="darkmode"

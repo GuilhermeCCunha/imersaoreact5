@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import ColorModeProvider, { ColorModeContext } from "../src/components/Menu/components/ColorMode";
 import RegisterVideo from "../src/components/RegisterVideo";
-
+import { useState } from "react";
 const theme = {
     light: {
         backgroundBase: "#f9f9f9",
@@ -26,8 +26,27 @@ const theme = {
 // ColorModeProvider -> Prove o state de light ou dark mode para todo mundo 
 
 function ProviderWrapper(props) {
+    const [LSTheme, setLSTheme] = useState(null)
+   
+  
+  
+    React.useEffect(() => {
+      
+      var local = localStorage.getItem('ls_theme')
+     
+      setLSTheme(local)
+      if (local === null) {
+        setLSTheme("light")
+      }
+      if (local !== "light" && local !== "dark") {
+        setLSTheme("light")
+      }
+    }, [])
+    
+    if (LSTheme === null) return null
+
     return (
-        <ColorModeProvider initialMode={"dark"}>
+        <ColorModeProvider initialMode={LSTheme}>
             {props.children}
         </ColorModeProvider>
     )

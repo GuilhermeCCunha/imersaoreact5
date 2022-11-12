@@ -135,5 +135,19 @@
                 "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
             }
         ]
-    }
+    },
+    "favoritos": {
+		"AluraTubes Favoritos": [
+			{
+				"github": "omariosouto",
+				"name": "@omariosouto",
+				"url": "#"
+			},
+			{
+				"github": "peas",
+				"name": "@peas",
+				"url": "#"
+			}
+		]
+	}
 }

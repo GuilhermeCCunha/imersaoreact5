@@ -1,5 +1,10 @@
 import React from "react";
 
+export const armazenar = (chave, valor) => {
+    localStorage.setItem(chave, valor)
+  }
+
+
 export const ColorModeContext = React.createContext({
     mode: "",
     setMode: () => { alert("Você precisa me configurar primeiro!")  },
@@ -10,8 +15,8 @@ export default function ColorModeProvider(props) {
     const [mode, setMode] = React.useState(props.initialMode);
 
     function toggleMode() {
-        if(mode === "dark") setMode("light");
-        if(mode === "light") setMode("dark");
+        if(mode === "dark") { setMode("light");  armazenar('ls_theme', "light"); }
+        if(mode === "light") { setMode("dark");    armazenar('ls_theme', "dark"); }
     }
 
     return (

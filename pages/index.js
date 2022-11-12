@@ -41,8 +41,8 @@ function HomePage() {
                 {/* Prop Drilling */}
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />
-                <Timeline searchValue={valorDoFiltro} playlists={playlists}>
-                    Conteúdo
+                <Timeline searchValue={valorDoFiltro} playlists={playlists} favoritos={config.favoritos}>
+                    ConteÃºdo
                 </Timeline>
             </div>
         </>
@@ -104,8 +104,9 @@ function Header() {
 function Timeline({ searchValue, ...propriedades }) {
     // console.log("Dentro do componente", propriedades.playlists);
     const playlistNames = Object.keys(propriedades.playlists);
+    const favoritosNames = Object.keys(propriedades.favoritos);
     // Statement
-    // Retorno por expressão
+    // Retorno por expressÃ£o
     return (
         <StyledTimeline>
             {playlistNames.map((playlistName) => {
@@ -136,6 +137,34 @@ function Timeline({ searchValue, ...propriedades }) {
                     </section>
                 )
             })}
+            {favoritosNames.map((favoritosName) => {
+				const favoritos = propriedades.favoritos[favoritosName];
+				//console.log(favoritosName);
+				//console.log(favoritos);
+				return (
+					<section key={favoritosName}>
+						<h2>{favoritosName}</h2>
+						<div className="favoritos">
+							{favoritos
+								.map((favorito) => {
+									return (
+										<a
+											key={favorito.name}
+											className="favorito-container"
+											href={favorito.url}
+										>
+											<img
+												className="favorito-img"
+												src={`https://github.com/${favorito.github}.png`}
+											/>
+											<span className="favorito-text">{favorito.name}</span>
+										</a>
+									)
+								})}
+						</div>
+					</section>
+				)
+			})}
         </StyledTimeline>
     )
 }

@@ -5,6 +5,25 @@ export const StyledTimeline = styled.div`
   width: 100%;
   padding: 16px;
   overflow: hidden;
+  .favoritos {
+    display: flex;
+    overflow-x: auto;
+  }
+  favorito-container{
+    width: 100px;
+		height: 124px;
+    text-align: center;
+  }
+  .favorito-img {
+    width: 80px;
+		height: 80px;
+    border-radius: 50%;
+  }
+  .favorito-text{
+    font-size: 14px;
+    text-align: center;
+    padding-right: 0;
+  }
   h2 {
     font-size: 16px;
     margin-bottom: 16px;
