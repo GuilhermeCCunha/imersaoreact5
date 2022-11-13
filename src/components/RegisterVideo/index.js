@@ -30,7 +30,9 @@ const supabase = createClient(PROJECT_URL, PUBLIC_KEY);
 
 // get youtube thumbnail from video url
 function getThumbnail(url) {
-    return `https://img.youtube.com/vi/${url.split("v=")[1]}/hqdefault.jpg`;
+    const youTubeId = url.replace(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/, '$7');
+    const Thumbnail = `https://img.youtube.com/vi/${youTubeId}/hqdefault.jpg`;
+    return Thumbnail;
 }
 
 // function getVideoId(url) {
@@ -51,9 +53,9 @@ export default function RegisterVideo() {
     ## O que precisamos para o form funcionar?
     - pegar os dados, que precisam vir do state
         - titulo
-        - url do vídeo 
+        - url do vÃ­deo 
     - precisamos ter um onSubmit do nosso form
-    - Limpar o formulário após o Submit
+    - Limpar o formulÃ¡rio apÃ³s o Submit
     */
 
     return (
@@ -61,7 +63,7 @@ export default function RegisterVideo() {
             <button className="add-video" onClick={() => setFormVisivel(true)}>
                 +
             </button>
-            {/* Ternário */}
+            {/* TernÃ¡rio */}
             {/* Operadores de Curto-circuito */}
             {formVisivel
                 ? (
@@ -91,7 +93,7 @@ export default function RegisterVideo() {
                                 X
                             </button>
                             <input
-                                placeholder="Titulo do vídeo"
+                                placeholder="Titulo do vÃ­deo"
                                 name="titulo"
                                 value={formCadastro.values.titulo}
                                 onChange={formCadastro.handleChange}
@@ -102,6 +104,9 @@ export default function RegisterVideo() {
                                 value={formCadastro.values.url}
                                 onChange={formCadastro.handleChange}
                             />
+
+                            {formCadastro.values.url.length > 11 ? <> <img src={getThumbnail(formCadastro.values.url)}  /> <br/> </>  : null }
+                            
                             <input
 								placeholder="Nome da playlist"
 								name="playlist"
@@ -120,8 +125,7 @@ export default function RegisterVideo() {
     )
 }
 
-
-// [X] Falta o botão para adicionar
+// [X] Falta o botÃ£o para adicionar
 // [X] Modal
 // -> [X] Precisamos controlar o state
-// -> Formulário em si
+// -> FormulÃ¡rio em si
