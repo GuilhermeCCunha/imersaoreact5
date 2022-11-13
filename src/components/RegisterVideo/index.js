@@ -53,9 +53,9 @@ export default function RegisterVideo() {
     ## O que precisamos para o form funcionar?
     - pegar os dados, que precisam vir do state
         - titulo
-        - url do vÃ­deo 
+        - url do vídeo 
     - precisamos ter um onSubmit do nosso form
-    - Limpar o formulÃ¡rio apÃ³s o Submit
+    - Limpar o formulário após o Submit
     */
 
     return (
@@ -63,7 +63,7 @@ export default function RegisterVideo() {
             <button className="add-video" onClick={() => setFormVisivel(true)}>
                 +
             </button>
-            {/* TernÃ¡rio */}
+            {/* Ternário */}
             {/* Operadores de Curto-circuito */}
             {formVisivel
                 ? (
@@ -93,7 +93,7 @@ export default function RegisterVideo() {
                                 X
                             </button>
                             <input
-                                placeholder="Titulo do vÃ­deo"
+                                placeholder="Titulo do vídeo"
                                 name="titulo"
                                 value={formCadastro.values.titulo}
                                 onChange={formCadastro.handleChange}
@@ -125,7 +125,7 @@ export default function RegisterVideo() {
     )
 }
 
-// [X] Falta o botÃ£o para adicionar
+// [X] Falta o botão para adicionar
 // [X] Modal
 // -> [X] Precisamos controlar o state
-// -> FormulÃ¡rio em si
+// -> Formulário em si
