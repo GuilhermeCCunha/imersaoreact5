@@ -3,11 +3,20 @@
     "job": "Developer",
     "bg": "./camera-viewfinder-frame_1361-1520.jpg",
     "github": "GuilhermeCCunha",
-    "favorites": [
-        {
-            
-        }
-    ],
+    "favorites": {
+		"AluraTubes Favoritos": [
+			{
+				"github": "omariosouto",
+				"name": "@omariosouto",
+				"url": "https://github.com/omariosouto"
+			},
+			{
+				"github": "peas",
+				"name": "@peas",
+				"url": "https://github.com/peas"
+			}
+		]
+	},
     "playlists": {
         "jogos": [
             {
@@ -135,19 +144,5 @@
                 "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
             }
         ]
-    },
-    "favoritos": {
-		"AluraTubes Favoritos": [
-			{
-				"github": "omariosouto",
-				"name": "@omariosouto",
-				"url": "#"
-			},
-			{
-				"github": "peas",
-				"name": "@peas",
-				"url": "#"
-			}
-		]
-	}
+    }
 }

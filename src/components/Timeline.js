@@ -63,4 +63,23 @@ export const StyledTimeline = styled.div`
       }
     }
   }
+  // Scrollbar estilizado
+  // Firefox 
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: ${({ theme }) => theme.borderBase} ${({ theme }) => theme.backgroundLevel1};
+  }
+  // Chrome, Edge, and Safari
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+  *::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.backgroundLevel1};
+    border-radius: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.borderBase};
+    border-radius: 10px;
+    border: 3px solid ${({ theme }) => theme.backgroundLevel1};
+  }
 `;

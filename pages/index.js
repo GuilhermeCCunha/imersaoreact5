@@ -41,7 +41,7 @@ function HomePage() {
                 {/* Prop Drilling */}
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />
-                <Timeline searchValue={valorDoFiltro} playlists={playlists} favoritos={config.favoritos}>
+                <Timeline searchValue={valorDoFiltro} playlists={playlists} favoritos={config.favorites}>
                     ConteÃºdo
                 </Timeline>
             </div>
@@ -152,6 +152,7 @@ function Timeline({ searchValue, ...propriedades }) {
 											key={favorito.name}
 											className="favorito-container"
 											href={favorito.url}
+                                            target="_blank" rel="noreferrer"
 										>
 											<img
 												className="favorito-img"
