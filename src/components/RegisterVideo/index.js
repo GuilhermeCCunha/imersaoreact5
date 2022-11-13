@@ -97,12 +97,16 @@ export default function RegisterVideo() {
                                 name="titulo"
                                 value={formCadastro.values.titulo}
                                 onChange={formCadastro.handleChange}
+                                required
                             />
                             <input
+                                pattern="((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))?(\/(?:[\w\-]+\?v=|embed\/|v\/)?)?([\w\-_]{11})(\S+)?"
+                                title="Insira uma URL válida"
                                 placeholder="URL"
                                 name="url"
                                 value={formCadastro.values.url}
                                 onChange={formCadastro.handleChange}
+                                required
                             />
 
                             {formCadastro.values.url.length > 11 ? <> <img src={getThumbnail(formCadastro.values.url)}  /> <br/> </>  : null }
@@ -124,6 +128,7 @@ export default function RegisterVideo() {
         </StyledRegisterVideo>
     )
 }
+
 
 // [X] Falta o botão para adicionar
 // [X] Modal
