@@ -17,7 +17,17 @@
 
 ## Detalhes do projeto
 
-Textos e imagens que descrevam seu projeto, suas conquistas, seus desafios, próximos passos, etc...
+O projeto possui as seguintes funcionalidades:
+
+- Visualização de várias playlists criadas pelo usuário.
+- Adição de vídeos com uma visualização do preview da Thumbnail.
+
+Os diferencias deste projeto são:
+
+- Tema claro ou escuro pode ser armazenado em Local Storage, o que faz com que o tema se mantenha o mesmo após recarregar a página.
+- O vídeo aparece imediatamente na página após cadastrar no formulário, sem a necessidade de recarregar a página.
+
+
 
 # Contribuidores 
 
