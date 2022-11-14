@@ -93,7 +93,7 @@ export default function RegisterVideo() {
                         setTimeout(() => {
                             atualizaContexto.toggleMode();
                         console.log(atualizaContexto);
-                            }, 1000);
+                            }, 890);
                         
                     }}>
                         <div>
