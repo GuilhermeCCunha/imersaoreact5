@@ -19,7 +19,7 @@ function useForm(propsDoForm) {
             });
         },
         clearForm() {
-            setValues({});
+            setValues(propsDoForm.initialValues);
         }
     };
 }

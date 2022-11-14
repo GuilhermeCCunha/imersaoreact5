@@ -28,7 +28,7 @@ function HomePage() {
 
                 setPlaylists(novasPlaylists);
             });
-    }, []);
+    }, [playlists]);
 
     return (
         <>
@@ -42,7 +42,7 @@ function HomePage() {
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />
                 <Timeline searchValue={valorDoFiltro} playlists={playlists} favoritos={config.favorites}>
-                    ConteÃºdo
+                    Conteúdo
                 </Timeline>
             </div>
         </>
@@ -106,7 +106,7 @@ function Timeline({ searchValue, ...propriedades }) {
     const playlistNames = Object.keys(propriedades.playlists);
     const favoritosNames = Object.keys(propriedades.favoritos);
     // Statement
-    // Retorno por expressÃ£o
+    // Retorno por expressão
     return (
         <StyledTimeline>
             {playlistNames.map((playlistName) => {
