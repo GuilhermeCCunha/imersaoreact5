@@ -4,14 +4,15 @@ import styled from "styled-components";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import { videoService } from "../src/services/videoService";
-
+import{ UpdateModeContext } from "../src/components/Menu/components/UpdateMode"
 function HomePage() {
     const service = videoService();
     const [valorDoFiltro, setValorDoFiltro] = React.useState("");
     const [playlists, setPlaylists] = React.useState({});     // config.playlists
-
+    const atualizaContexto = React.useContext(UpdateModeContext);
     React.useEffect(() => {
         console.log("useEffect");
+        console.log(atualizaContexto);
         service
             .getAllVideos()
             .then((dados) => {
@@ -28,7 +29,7 @@ function HomePage() {
 
                 setPlaylists(novasPlaylists);
             });
-    }, [playlists]);
+    }, [atualizaContexto,valorDoFiltro]);
 
     return (
         <>

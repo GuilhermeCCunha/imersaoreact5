@@ -4,6 +4,7 @@ import { CSSReset } from "../src/components/CSSReset";
 import ColorModeProvider, { ColorModeContext } from "../src/components/Menu/components/ColorMode";
 import RegisterVideo from "../src/components/RegisterVideo";
 import { useState } from "react";
+import UpdateModeProvider, { UpdateModeContext } from "../src/components/Menu/components/UpdateMode";
 const theme = {
     light: {
         backgroundBase: "#f9f9f9",
@@ -27,10 +28,12 @@ const theme = {
 
 function ProviderWrapper(props) {
     const [LSTheme, setLSTheme] = useState(null)
-   
+    const atualizaContexto = React.useContext(UpdateModeContext);
   
   
     React.useEffect(() => {
+
+        atualizaContexto.toggleMode();
       
       var local = localStorage.getItem('ls_theme')
      
@@ -52,8 +55,20 @@ function ProviderWrapper(props) {
     )
 }
 
+function ProviderWrapperUpdate(props) {
+   
+
+    return (
+        <UpdateModeProvider initialMode={"a"}>
+            {props.children}
+        </UpdateModeProvider>
+    )
+}
+
+
 function Root({ Component, pageProps }) {
     const contexto = React.useContext(ColorModeContext);
+    const atualizaContexto = React.useContext(UpdateModeContext);
     // console.log(contexto.mode);
     return (
         <ThemeProvider theme={theme[contexto.mode]}>
@@ -66,8 +81,12 @@ function Root({ Component, pageProps }) {
 
 export default function _App(props) {
     return (
+        <>
+        <ProviderWrapperUpdate>
         <ProviderWrapper>
             <Root {...props} />
         </ProviderWrapper>
+        </ProviderWrapperUpdate>
+        </>
     )
 };

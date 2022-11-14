@@ -1,6 +1,7 @@
 import React from "react";
 import { StyledRegisterVideo } from "./styles";
 import { createClient } from "@supabase/supabase-js";
+import { UpdateModeContext } from "../Menu/components/UpdateMode"
 
 // Whiteboarding
 // Custom Hook
@@ -49,6 +50,7 @@ export default function RegisterVideo() {
         initialValues: { titulo: "Frost punk", url: "https://www.youtube.com/watch?v=QsqatJxAUtk", playlist: "jogos"  }
     });
     const [formVisivel, setFormVisivel] = React.useState(false);
+    const atualizaContexto = React.useContext(UpdateModeContext);
     /*
     ## O que precisamos para o form funcionar?
     - pegar os dados, que precisam vir do state
@@ -87,6 +89,8 @@ export default function RegisterVideo() {
 
                         setFormVisivel(false);
                         formCadastro.clearForm();
+                        atualizaContexto.toggleMode();
+                        console.log(atualizaContexto);
                     }}>
                         <div>
                             <button type="button" className="close-modal" onClick={() => setFormVisivel(false)}>
