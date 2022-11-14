@@ -40,9 +40,6 @@ function HomePage() {
                 // backgroundColor: "red",
             }}>
                 {/* Prop Drilling */}
-                <Head>
-                <title>AluraTube</title>
-                </Head>
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />
                 <Timeline searchValue={valorDoFiltro} playlists={playlists} favoritos={config.favorites}>
