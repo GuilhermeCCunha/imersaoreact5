@@ -62,7 +62,8 @@ export default function RegisterVideo() {
 
     return (
         <StyledRegisterVideo>
-            <button className="add-video" onClick={() => setFormVisivel(true)}>
+            <button className="add-video" onClick={() => {setFormVisivel(true); atualizaContexto.toggleMode();
+                        console.log(atualizaContexto); }}>
                 +
             </button>
             {/* Ternário */}
@@ -72,7 +73,8 @@ export default function RegisterVideo() {
                     <form onSubmit={(evento) => {
                         evento.preventDefault();
                         console.log(formCadastro.values);
-                        
+                        atualizaContexto.toggleMode();
+                        console.log(atualizaContexto);
                         // Contrato entre o nosso Front e o BackEnd
                         supabase.from("video").insert({
                             title: formCadastro.values.titulo,
@@ -89,11 +91,11 @@ export default function RegisterVideo() {
 
                         setFormVisivel(false);
                         formCadastro.clearForm();
-                        atualizaContexto.toggleMode();
-                        console.log(atualizaContexto);
+                        
                     }}>
                         <div>
-                            <button type="button" className="close-modal" onClick={() => setFormVisivel(false)}>
+                            <button type="button" className="close-modal" onClick={() => { setFormVisivel(false); atualizaContexto.toggleMode();
+                        console.log(atualizaContexto);}}>
                                 X
                             </button>
                             <input
