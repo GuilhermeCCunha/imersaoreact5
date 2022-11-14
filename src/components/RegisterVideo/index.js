@@ -73,8 +73,7 @@ export default function RegisterVideo() {
                     <form onSubmit={(evento) => {
                         evento.preventDefault();
                         console.log(formCadastro.values);
-                        atualizaContexto.toggleMode();
-                        console.log(atualizaContexto);
+                        
                         // Contrato entre o nosso Front e o BackEnd
                         supabase.from("video").insert({
                             title: formCadastro.values.titulo,
@@ -91,6 +90,10 @@ export default function RegisterVideo() {
 
                         setFormVisivel(false);
                         formCadastro.clearForm();
+                        setTimeout(() => {
+                            atualizaContexto.toggleMode();
+                        console.log(atualizaContexto);
+                            }, 1000);
                         
                     }}>
                         <div>
