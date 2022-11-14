@@ -5,7 +5,7 @@ import ColorModeProvider, { ColorModeContext } from "../src/components/Menu/comp
 import RegisterVideo from "../src/components/RegisterVideo";
 import { useState } from "react";
 import UpdateModeProvider, { UpdateModeContext } from "../src/components/Menu/components/UpdateMode";
-import Head from "next";
+import Head from 'next/head'
 
 const theme = {
     light: {
