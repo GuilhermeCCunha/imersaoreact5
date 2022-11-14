@@ -5,6 +5,8 @@ import ColorModeProvider, { ColorModeContext } from "../src/components/Menu/comp
 import RegisterVideo from "../src/components/RegisterVideo";
 import { useState } from "react";
 import UpdateModeProvider, { UpdateModeContext } from "../src/components/Menu/components/UpdateMode";
+import Head from "next";
+
 const theme = {
     light: {
         backgroundBase: "#f9f9f9",
@@ -82,6 +84,9 @@ function Root({ Component, pageProps }) {
 export default function _App(props) {
     return (
         <>
+        <Head>
+            <title>AluraTube</title>
+        </Head>
         <ProviderWrapperUpdate>
         <ProviderWrapper>
             <Root {...props} />
