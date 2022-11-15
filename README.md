@@ -9,7 +9,7 @@
 
 - Marque esse projeto com uma estrela se você gostou
 
-![demo_light_02](./public/imagem-ilustrativa-do-projeto.png#vitrinedev)
+![](https://raw.githubusercontent.com/GuilhermeCCunha/imersaoreact5/main/public/imagem-ilustrativa-do-projeto.png#vitrinedev)
 
 
 ## Onde está o Layout base do projeto?
