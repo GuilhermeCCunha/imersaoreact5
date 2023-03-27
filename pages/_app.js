@@ -35,7 +35,7 @@ function ProviderWrapper(props) {
   
     React.useEffect(() => {
 
-        atualizaContexto.toggleMode();
+      //atualizaContexto.toggleMode();
       
       var local = localStorage.getItem('ls_theme')
      
@@ -61,7 +61,7 @@ function ProviderWrapperUpdate(props) {
    
 
     return (
-        <UpdateModeProvider initialMode={"a"}>
+        <UpdateModeProvider initialMode={0}>
             {props.children}
         </UpdateModeProvider>
     )

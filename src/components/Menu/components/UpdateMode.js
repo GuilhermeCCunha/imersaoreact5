@@ -2,22 +2,23 @@ import React from "react";
 // Testar no servidor da vercel
 
 export const UpdateModeContext = React.createContext({
-    mode: "a", // testar a e depois vazio
-    setMode: () => { alert("Você precisa me configurar primeiro!")  },
-    toggleMode: () => { alert("Você precisa me configurar primeiro!")  },
+    setNewVideos: () => { alert("Você precisa me configurar primeiro!")  },
+    addToPlaylist: () => { alert("Você precisa me configurar primeiro!")  },
 });
 
-export default function UpdateModeProvider(props) {
-    const [mode, setMode] = React.useState(props.initialMode);
+UpdateModeContext.displayName = "Update";
 
-    function toggleMode() {
+export default function UpdateModeProvider(props) {
+    const [newVideos, setNewVideos] = React.useState(props.initialMode);
+
+    function addToPlaylist() {
     
-        if(mode === "a")  setMode("b");  
-        if(mode === "b")  setMode("a");     
+        setNewVideos(newVideos+1)
+            
     }
 
     return (
-        <UpdateModeContext.Provider value={{ mode: mode, setMode: setMode, toggleMode: toggleMode }}>
+        <UpdateModeContext.Provider value={{ newVideos: newVideos, setNewVideos: setNewVideos, addToPlaylist: addToPlaylist }}>
             {props.children}
         </UpdateModeContext.Provider>
     );

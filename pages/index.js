@@ -12,7 +12,7 @@ function HomePage() {
     const atualizaContexto = React.useContext(UpdateModeContext);
     React.useEffect(() => {
         console.log("useEffect");
-        console.log(atualizaContexto);
+        //console.log(atualizaContexto);
         service
             .getAllVideos()
             .then((dados) => {

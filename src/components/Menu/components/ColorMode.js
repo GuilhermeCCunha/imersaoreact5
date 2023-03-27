@@ -5,11 +5,12 @@ export const armazenar = (chave, valor) => {
   }
 
 
-export const ColorModeContext = React.createContext({
+export const ColorModeContext = React.createContext({   
     mode: "",
     setMode: () => { alert("Você precisa me configurar primeiro!")  },
     toggleMode: () => { alert("Você precisa me configurar primeiro!")  },
 });
+ColorModeContext.displayName = "Theme";
 
 export default function ColorModeProvider(props) {
     const [mode, setMode] = React.useState(props.initialMode);

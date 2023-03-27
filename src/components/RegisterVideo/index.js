@@ -62,7 +62,7 @@ export default function RegisterVideo() {
 
     return (
         <StyledRegisterVideo>
-            <button className="add-video" onClick={() => {setFormVisivel(true); atualizaContexto.toggleMode();
+            <button className="add-video" onClick={() => {setFormVisivel(true); //atualizaContexto.toggleMode();
                         console.log(atualizaContexto); }}>
                 +
             </button>
@@ -91,13 +91,14 @@ export default function RegisterVideo() {
                         setFormVisivel(false);
                         formCadastro.clearForm();
                         setTimeout(() => {
-                            atualizaContexto.toggleMode();
-                        console.log(atualizaContexto);
+                            atualizaContexto.addToPlaylist();
+                        //console.log(atualizaContexto);
+                        console.log('Veja o valor atualizar no React Context DevTool')
                             }, 890);
                         
                     }}>
                         <div>
-                            <button type="button" className="close-modal" onClick={() => { setFormVisivel(false); atualizaContexto.toggleMode();
+                            <button type="button" className="close-modal" onClick={() => { setFormVisivel(false); //atualizaContexto.toggleMode();
                         console.log(atualizaContexto);}}>
                                 X
                             </button>
