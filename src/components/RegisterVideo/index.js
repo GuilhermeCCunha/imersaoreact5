@@ -1,8 +1,7 @@
 import React from "react";
 import { StyledRegisterVideo } from "./styles";
-import { createClient } from "@supabase/supabase-js";
 import { UpdateModeContext } from "../Menu/components/UpdateMode"
-
+import { supabase } from "../../../lib/initSupabase";
 // Whiteboarding
 // Custom Hook
 function useForm(propsDoForm) {
@@ -25,9 +24,6 @@ function useForm(propsDoForm) {
     };
 }
 
-const PROJECT_URL = "https://agiddpqoamxrqnawgipv.supabase.co";
-const PUBLIC_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnaWRkcHFvYW14cnFuYXdnaXB2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY1ODM2MTQsImV4cCI6MTk4MjE1OTYxNH0.aH02ulyAWA-Z4U3Z1LhFnxOrAZEILXrh4vKsK8S9zPg";
-const supabase = createClient(PROJECT_URL, PUBLIC_KEY);
 
 // get youtube thumbnail from video url
 function getThumbnail(url) {
