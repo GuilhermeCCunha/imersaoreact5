@@ -1,5 +1,7 @@
 # Aluratube
 
+Este repositório guarda a minha versão do AluraTube, desenvolvido na Imersão React 5.
+
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
 | :sparkles: Nome        | **AluraTube - Imersão React 5**
@@ -45,7 +47,13 @@ create table
   ) tablespace pg_default;
 
 ```
+ Crie na raiz do projeto o arquivo `.env` com as variáveis do Supabase, seguindo o exemplo abaixo:
 
+  ```dotenv
+NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_KEY=YOUR_SUPABASE_ANON_KEY
+ ```
+É necessário criar um arquivo `.env` de acordo com o exemplo acima, para que o projeto funcione normalmente.
 
 # Contribuidores 
 
