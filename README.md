@@ -55,6 +55,16 @@ NEXT_PUBLIC_SUPABASE_KEY=YOUR_SUPABASE_ANON_KEY
  ```
 É necessário criar um arquivo `.env` de acordo com o exemplo acima, para que o projeto funcione normalmente.
 
+### Executar o projeto
+
+```bash
+# Execute o projeto
+npm install
+npm run dev
+
+# Abra o navegador em http://localhost:3000 para ver o resultado
+```
+
 # Contribuidores 
 
 | Pessoa que criou o projeto | 
